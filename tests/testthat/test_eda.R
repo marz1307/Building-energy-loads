@@ -11,7 +11,7 @@ test_that("correlation_matrix is symmetric with unit diagonal", {
   df <- make_energy_fixture()
   cor_mat <- correlation_matrix(df)
   expect_equal(nrow(cor_mat), ncol(cor_mat))
-  expect_equal(diag(cor_mat), rep(1, nrow(cor_mat)), tolerance = 1e-8)
+  expect_equal(unname(diag(cor_mat)), rep(1, nrow(cor_mat)), tolerance = 1e-8)
   expect_equal(cor_mat, t(cor_mat), tolerance = 1e-8)
 })
 

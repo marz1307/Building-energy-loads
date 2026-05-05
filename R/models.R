@@ -30,7 +30,9 @@ MODEL_FORMULAE <- list(
 fit_heating_load_model <- function(df) {
   validate_energy_data(df)
   set.seed(42)
-  full_model <- stats::lm(MODEL_FORMULAE$heating_full, data = df)
+  fmla <- MODEL_FORMULAE$heating_full
+  environment(fmla) <- environment()
+  full_model <- stats::lm(fmla, data = df)
   stats::step(full_model, direction = "both", trace = 0)
 }
 
@@ -42,6 +44,8 @@ fit_heating_load_model <- function(df) {
 fit_cooling_load_model <- function(df) {
   validate_energy_data(df)
   set.seed(42)
-  full_model <- stats::lm(MODEL_FORMULAE$cooling_full, data = df)
+  fmla <- MODEL_FORMULAE$cooling_full
+  environment(fmla) <- environment()
+  full_model <- stats::lm(fmla, data = df)
   stats::step(full_model, direction = "both", trace = 0)
 }
