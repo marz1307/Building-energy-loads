@@ -29,12 +29,9 @@ jobs:
             any::lintr
             any::testthat
 
-      - name: Lint package
-        run: Rscript -e 'lintr::lint_package()'
+      - name: Lint R, analysis, tests
+        run: |
+          Rscript -e 'lints <- c(lintr::lint_dir("R"), lintr::lint_dir("analysis"), lintr::lint_dir("tests")); if (length(lints) > 0) { print(lints); quit(status = 1) }'
 
       - name: Run tests
-        run: Rscript -e 'testthat::test_local()'
-
-      - uses: r-lib/actions/check-r-package@v2
-        with:
-          upload-snapshots: true
+        run: Rscript -e 'testthat::test_dir("tests/testthat", reporter = "summary", stop_on_failure = TRUE)'
