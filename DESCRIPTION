@@ -1,0 +1,33 @@
+Package: energyEfficiency
+Title: Statistical Analysis of Building Energy Efficiency
+Version: 0.1.0
+Authors@R:
+    person("Marvis", "Osazuwa",
+           email = "marvis.osazuwa@hotmail.com",
+           role = c("aut", "cre"))
+Description: Reproducible statistical analysis of building energy
+    efficiency data. Provides functions for loading and validating
+    building geometry data, computing descriptive statistics and
+    correlations, fitting linear regression models for heating and
+    cooling loads, running diagnostics for collinearity, normality,
+    and heteroscedasticity, and producing publication quality plots.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.3.2
+Imports:
+    dplyr,
+    ggplot2,
+    readxl,
+    knitr,
+    car,
+    gridExtra,
+    RColorBrewer,
+    scales,
+    hexbin,
+    ggridges,
+    tibble
+Suggests:
+    testthat (>= 3.0.0),
+    lintr
+Config/testthat/edition: 3

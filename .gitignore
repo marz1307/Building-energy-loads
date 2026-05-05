@@ -1,0 +1,32 @@
+# R
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+*.Rproj
+.Rapp.history
+
+# Build artifacts
+*.tar.gz
+*.Rcheck/
+src/*.o
+src/*.so
+src/*.dll
+
+# Output
+output/
+*.png
+*.pdf
+*.html
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editors
+.vscode/
+.idea/
+
+# Internal logs (do not ship)
+AUDIT.md
+CORRECTIONS.md

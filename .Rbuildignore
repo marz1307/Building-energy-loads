@@ -1,0 +1,12 @@
+^.*\.Rproj$
+^\.Rproj\.user$
+^\.github$
+^\.lintr$
+^Makefile$
+^analysis$
+^data-raw$
+^output$
+^AUDIT\.md$
+^CORRECTIONS\.md$
+^LICENSE\.md$
+^README\.md$
